@@ -1,0 +1,712 @@
+{
+	"info": {
+		"_postman_id": "b389812b-0ee6-4a7d-b19e-05dd2231cf83",
+		"name": "GoalsApplication",
+		"description": "Some important endpoints of the microservices for testing the goals application. Some example requests/responses are included but not necessarily correct/complete.\n\nHINT: The collection does NOT cover all available endpoints.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21501599"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Save NpoType",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test NPO Type\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/npo-types/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"npo-types",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete NpoType",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/npo-types/9d0a27fc-7845-42cd-a161-1a234d7be115",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"npo-types",
+								"9d0a27fc-7845-42cd-a161-1a234d7be115"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get NpoTypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/npo-types",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"npo-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/users?typeId=d0f055d5-35d6-11ee-b0c3-d65d517f8931",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "typeId",
+									"value": "d0f055d5-35d6-11ee-b0c3-d65d517f8931"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userClass\": \"Partner\",\r\n    \"id\": \"fe517b17-b446-4a82-90df-354eb59dc0e1\",\r\n    \"name\": \"TEST\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/users/fe517bf7-b446-4a82-90df-354eb59dc0e1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"fe517bf7-b446-4a82-90df-354eb59dc0e1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/users/fe517bf7-b446-4a82-90df-354eb59dc0e1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"fe517bf7-b446-4a82-90df-354eb59dc0e1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Volunteer Npos",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "item",
+			"item": [
+				{
+					"name": "saveItemCategory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"f8dd82eb-6893-4bf6-b025-60f9e1864ac7\",\r\n    \"name\": \"Badge\",\r\n    \"supertype\":\r\n    {\r\n        \"id\": \"f8dd82eb-6893-4bf6-b025-60f9e1864ac6\"\r\n    },\r\n    \"npoTypes\":\r\n    [\r\n        \"b1f6a9e2-bc10-4637-b12c-d631bb94286b\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/v1/item-categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1",
+								"item-categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getItemCategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/v1/item-categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1",
+								"item-categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteItemCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/v1/item-categories/f8dd82eb-6893-4bf6-b025-60f9e1864ac7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1",
+								"item-categories",
+								"f8dd82eb-6893-4bf6-b025-60f9e1864ac7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemClass\": \"Achievement\",\r\n    \"id\": \"6d49e6e2-2ed8-4262-b660-5790a555a923\",\r\n    \"name\": \"Verdienstmedaille\",\r\n    \"description\": \"Für besondere Verdienste\",\r\n    \"category\": \r\n    {\r\n        \"id\": \"f8dd82eb-6893-4bf6-b025-60f9e1864ac6\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/v1/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/v1/items?itemClass=GoalBadge",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1",
+								"items"
+							],
+							"query": [
+								{
+									"key": "itemClass",
+									"value": "GoalBadge"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/v1/items/6d49e6e2-2ed8-4262-b660-5790a555a923",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1",
+								"items",
+								"6d49e6e2-2ed8-4262-b660-5790a555a923"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/v1/items/6d49e6e2-2ed8-4262-b660-5790a555a923",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1",
+								"items",
+								"6d49e6e2-2ed8-4262-b660-5790a555a923"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save User Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"userItemClass\": \"UserActivity\",\r\n        \"item\": {\r\n            \"itemClass\": \"Training\",\r\n            \"id\": \"f556dee7-26de-11ee-b0c3-d65d517f8931\",\r\n            \"name\": \"Communication Intelligence Training\",\r\n            \"description\": \"NYFD personnel participate in a comprehensive communication intelligence course\",\r\n            \"category\": {\r\n                \"id\": \"89bfd924-cfd1-11ed-bfbd-1bfead64f085\",\r\n                \"name\": \"Intelligence Service\",\r\n                \"parent\": {\r\n                    \"id\": \"0b49ee0f-cfd1-11ed-bfbd-1bfead64f085\",\r\n                    \"name\": \"Special Training\",\r\n                    \"parent\": {\r\n                        \"id\": \"f171018d-cfce-11ed-bfbd-1bfead64f085\",\r\n                        \"name\": \"Training\",\r\n                        \"parent\": {\r\n                            \"id\": \"9cacce89-cfcd-11ed-bfbd-1bfead64f085\",\r\n                            \"name\": \"Activity\",\r\n                            \"parent\": null,\r\n                            \"npoTypeIds\": [\r\n                                \"3492cd95-cfc6-11ed-bfbd-1bfead64f085\"\r\n                            ]\r\n                        },\r\n                        \"npoTypeIds\": [\r\n                            \"3492cd95-cfc6-11ed-bfbd-1bfead64f085\"\r\n                        ]\r\n                    },\r\n                    \"npoTypeIds\": [\r\n                        \"3492cd95-cfc6-11ed-bfbd-1bfead64f085\"\r\n                    ]\r\n                },\r\n                \"npoTypeIds\": [\r\n                    \"3492cd95-cfc6-11ed-bfbd-1bfead64f085\"\r\n                ]\r\n            },\r\n            \"startDate\": \"2023-07-02\",\r\n            \"endDate\": \"2023-07-02\",\r\n            \"location\": \"HQ\"\r\n        },\r\n        \"userId\": \"a23f58c9-cfef-11ed-bfbd-1bfead64f085\",\r\n        \"created\": \"2023-08-30\",\r\n        \"contributions\": [\r\n            {\r\n                \"extent\": 10,\r\n                \"measurementUnitId\": \"163e3f66-cfc9-11ed-bfbd-1bfead64f085\"\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/v1/user-items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1",
+								"user-items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get UserItems",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/v1/user-items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1",
+								"user-items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Item by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/v1/user-items/249f91d8-72db-4828-8f11-50bb54c2aaf3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1",
+								"user-items",
+								"249f91d8-72db-4828-8f11-50bb54c2aaf3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCompetenceLevel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"value\": 1,\r\n    \"name\": \"Champion\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/v1/competence-levels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"v1",
+								"competence-levels"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "goal",
+			"item": [
+				{
+					"name": "Get Goal Pursuits",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sortColumn\": \"name\",\r\n    \"sortDirection\": \"asc\",\r\n    \"pageSize\": 2,\r\n    \"page\": 0,\r\n    \"statuses\":[\r\n        \"985c2dbc-cff8-11ed-bfbd-1bfead64f085\",\r\n        \"9841ebef-cff8-11ed-bfbd-1bfead64f085\"\r\n    ],\r\n    \"userId\": \"a23f58c9-cfef-11ed-bfbd-1bfead64f085\",\r\n    \"type\": \"Performance Goal\",\r\n    \"name\": \"Exc\",\r\n    \"description\": \"Get\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/goals/goal-pursuits",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"goals",
+								"goal-pursuits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Goal Pursuits By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/goals/goal-pursuits/cf972866-35e2-11ee-b0c3-d65d517f8931",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"goals",
+								"goal-pursuits",
+								"cf972866-35e2-11ee-b0c3-d65d517f8931"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Challenges",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    \"a23f58c9-cfef-11ed-bfbd-1bfead64f085\"\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/goals/challenges",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"goals",
+								"challenges"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comparators",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/goals/comparators",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"goals",
+								"comparators"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comparison Periods",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get Statuses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/goals/goal-pursuits/statuses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"goals",
+								"goal-pursuits",
+								"statuses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Goal Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/goals/goal-types",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"goals",
+								"goal-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Measurement Units",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/goals/measurement-units",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"goals",
+								"measurement-units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comparison Subject Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/goals/comparison-subject-types",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"goals",
+								"comparison-subject-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group Comparators",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/goals/group-comparators",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"goals",
+								"group-comparators"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
